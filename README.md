@@ -77,6 +77,7 @@ A YOLOv8 nano model performs high-speed object detection.
   <br>
   <b>Figure 1:</b> <i>Interactive UI showing the Dual-Layer Audit flagging a low-confidence detection.</i>
 </p>
+
 ---
 
 ## 📊 Business Impact
