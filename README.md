@@ -67,11 +67,10 @@ A YOLOv8 nano model performs high-speed object detection.
 ---
 
 <p align="center">
-  <img src="assets/ui_ss.png" width="800" alt="ClearLabel AI UI">
+  <img src="assets/ui_ss.png" width="800" alt="Construction Safety Audit Tool UI">
   <br>
-  <b>Figure 1:</b> <i>Dual-layer audit system identifying low-confidence detections.</i>
+  <b>Figure 1:</b> <i>Interactive UI showing the Dual-Layer Audit flagging a low-confidence detection.</i>
 </p>
-
 ---
 
 ## 📊 Business Impact
