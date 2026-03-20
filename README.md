@@ -3,7 +3,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-aawhanvyas-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/aawhanvyas)
 [![GitHub](https://img.shields.io/badge/GitHub-aawhan0-lightgrey?style=flat&logo=github)](https://github.com/aawhan0)
-[![Live Demo](https://img.shields.io/badge/Streamlit-Live_Demo-FF4B4B?style=flat&logo=streamlit)](https://auto-annotation-aawhan0.streamlit.app/)
+[![Live Demo](https://img.shields.io/badge/Streamlit-Live_Demo-FF4B4B?style=flat&logo=streamlit)](https://clearlabel-ai.streamlit.app/)
 
 ---
 
@@ -34,7 +34,7 @@ It ensures:
 - Edge cases are intelligently routed for manual review  
 - Dataset quality remains consistently high ("Gold Standard")
 
-### 🔗 [Live Demo](https://auto-annotation-aawhan0.streamlit.app/)
+### 🔗 [Live Demo](https://clearlabel-ai.streamlit.app/)
 
 ---
 
@@ -94,24 +94,26 @@ Using the Construction Site Safety dataset (v30):
 ## 📂 Project Structure
 ```text
 ClearLabel-AI/
-├── data/
-│   ├── raw/             # Unlabelled images (Construction Safety Dataset)
-│   ├── auto_labeled/    # Validated images & generated .txt labels
-│   └── needs_review/    # Images flagged for Blur or Low Confidence
-├── models/
-│   └── yolov8n.pt       # Pre-trained YOLOv8 weights
-├── src/
-│   └── audit_pipeline.py # Main Audit & Annotation Logic
-├── requirements.txt     # Project Dependencies
-└── README.md            # Documentation
+│── app.py # Main Streamlit application
+│── requirements.txt # Python dependencies
+│── packages.txt # System dependencies (for Streamlit Cloud)
+│── yolov8n.pt # Pre-trained YOLOv8 model
+│── README.md # Project documentation
+│── LICENSE # License file
+│
+├── src/ # (Optional) Core logic / modules
+├── notebooks/ # Experiments and testing notebooks
+├── data/ # (Ignored) Input datasets
+├── runs/ # (Ignored) YOLO outputs
 ```
+---
 ## ⚙️ Setup & Usage
 1. Clone the repository
 Open your terminal and run the following command to download the project:
 
 ```bash
-git clone https://github.com/aawhan0/Auto-Annotation.git
-cd Auto-Annotation
+git clone https://github.com/aawhan0/ClearLabel-AI.git
+cd ClearLabel-AI
 ```
 2. Install dependencies
 Ensure you have Python installed, then install the required libraries:
