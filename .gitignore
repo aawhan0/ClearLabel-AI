@@ -13,8 +13,6 @@ venv/
 
 # YOLO / ML outputs
 runs/
-*.jpg
-*.png
 
 # Jupyter
 .ipynb_checkpoints
