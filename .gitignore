@@ -1,12 +1,21 @@
 # Data and Models
 data/
-models/*.pt
+models/
+*.pt
 
-# Python Environment
+# Python
 __pycache__/
 *.py[cod]
+*.pyo
+
+# Virtual Environment
+venv/
 .env
-.venv/
+
+# YOLO / ML outputs
+runs/
+*.jpg
+*.png
 
 # Jupyter
 .ipynb_checkpoints
