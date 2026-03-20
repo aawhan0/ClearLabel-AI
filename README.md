@@ -1,52 +1,99 @@
-# Automated Image Annotation & Quality Audit Tool
+# ClearLabel AI  
+### Automated Image Annotation & Data Quality Audit Pipeline
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-aawhanvyas-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/aawhanvyas)
 [![GitHub](https://img.shields.io/badge/GitHub-aawhan0-lightgrey?style=flat&logo=github)](https://github.com/aawhan0)
 [![Live Demo](https://img.shields.io/badge/Streamlit-Live_Demo-FF4B4B?style=flat&logo=streamlit)](https://auto-annotation-aawhan0.streamlit.app/)
 
+---
+
+## 🚀 Overview
+**ClearLabel AI** is a data-centric AI pipeline that automates image annotation while enforcing strict data quality standards through a dual-layer audit system.
+
+It is designed to reduce manual labeling effort while ensuring only high-quality, model-ready data enters the training pipeline.
+
+---
+
 ## 🚀 The Problem
-In production level AI, manual data labeling is the most expensive and time consuming bottleneck. Raw datasets are often noisy; they frequently contain blurry images or ambiguous objects that can degrade model performance if not filtered correctly.
+In production-level AI systems, **manual data labeling is the most expensive and time-consuming bottleneck**.
+
+Raw datasets are often:
+- Noisy  
+- Blurry  
+- Contain ambiguous or low-quality samples  
+
+Training on such data directly leads to **poor model performance and unreliable predictions**.
+
+---
 
 ## 🛠️ The Solution
-I developed an **Automated Annotation & Quality Audit Pipeline** designed for industrial grade datasets (specifically Construction Site Safety). This tool implements a "Human-in-the-Loop" architecture that automates the labeling process while maintaining a strict "Gold Standard" for data quality.
+ClearLabel AI introduces an **Automated Annotation & Quality Audit Pipeline** with a **Human-in-the-Loop architecture**.
 
-### 🔗 [Click Here for the Live Demo](https://auto-annotation-aawhan0.streamlit.app/)
+It ensures:
+- Only high-confidence, high-quality data is auto-labeled  
+- Edge cases are intelligently routed for manual review  
+- Dataset quality remains consistently high ("Gold Standard")
+
+### 🔗 [Live Demo](https://auto-annotation-aawhan0.streamlit.app/)
+
+---
+
+## ⚡ Key Features
+- ✅ Automated image annotation using YOLOv8  
+- ✅ Dual-layer quality audit (Blur Detection + Confidence Filtering)  
+- ✅ Human-in-the-loop review system  
+- ✅ Production-ready YOLO format output  
+- ✅ Modular pipeline for easy MLOps integration  
+- ✅ Real-time interactive UI (Streamlit)  
+
+---
 
 ## 🧠 Technical Methodology
-The pipeline processes raw data through two critical audit layers:
 
 ### 1. Visual Quality Audit (OpenCV)
-Before the AI ever sees the data, a script audits the image for clarity using **Laplacian Variance**.
-* **Logic:** Images with low variance (blurred or out-of-focus) are automatically flagged.
-* **Impact:** Prevents "garbage data" from being used in training, ensuring higher model precision.
+Before inference, images are evaluated using **Laplacian Variance**.
+
+- **Logic:** Low variance → blurred/out-of-focus → flagged  
+- **Impact:** Eliminates low-quality inputs before model training  
+
+---
 
 ### 2. AI Confidence Audit (YOLOv8)
-The pipeline utilizes a YOLOv8 nano model for high-speed inference.
-* **Auto-Accept:** Detections with **>85% confidence** are automatically saved in production-ready YOLO format.
-* **Audit Flag:** Any image with detections **<85%** or zero detections is moved to a `needs_review` folder.
+A YOLOv8 nano model performs high-speed object detection.
+
+- **Auto-Accept:** Predictions with **>85% confidence** → saved  
+- **Flagged:** Predictions with **<85% confidence** or no detection → `needs_review`  
+
+---
 
 <p align="center">
-  <img src="assets/ui_ss.png" width="800" alt="Construction Safety Audit Tool UI">
+  <img src="assets/ui_ss.png" width="800" alt="ClearLabel AI UI">
   <br>
-  <b>Figure 1:</b> <i>Interactive UI showing the Dual-Layer Audit flagging a low-confidence detection.</i>
+  <b>Figure 1:</b> <i>Dual-layer audit system identifying low-confidence detections.</i>
 </p>
 
 ---
 
 ## 📊 Business Impact
-* **Efficiency:** Estimated **70% reduction** in manual annotation workload.
-* **Scalability:** Modular Python architecture allows for easy integration into MLOps pipelines.
-* **Quality Assurance:** Built-in auditing ensures zero-defect datasets for client delivery.
+- **⚡ 70% reduction** in manual annotation workload  
+- **📈 Improved dataset reliability** via automated quality checks  
+- **🔁 Scalable pipeline** ready for MLOps workflows  
+- **🧠 Data-centric approach** improves downstream model performance  
 
-## 📈 Current Results
-Based on the Construction Site Safety dataset (v30), the pipeline achieved the following distribution:
-* **Total Processed:** 717 images
-* **Auto-Accepted:** ~70% (High Confidence + High Clarity)
-* **Flagged for Review:** ~30% (Low Confidence/Ambiguity/Blur)
+---
+
+## 📈 Results
+Using the Construction Site Safety dataset (v30):
+
+- **Total Processed:** 717 images  
+- **Auto-Accepted:** ~70% (High Confidence + High Clarity)  
+- **Flagged for Review:** ~30% (Low Confidence / Blur / Ambiguity)  
+
+---
 
 ## 📂 Project Structure
 ```text
-automated-annotation-tool/
+ClearLabel-AI/
 ├── data/
 │   ├── raw/             # Unlabelled images (Construction Safety Dataset)
 │   ├── auto_labeled/    # Validated images & generated .txt labels
@@ -86,4 +133,8 @@ python src/audit_pipeline.py
 * **Data-Centric AI:** [Andrew Ng's Data-Centric AI Resource Hub](https://datacentricai.org/)
 
 ---
-**Aawhan Vyas** | [LinkedIn](https://www.linkedin.com/in/aawhanvyas) | [GitHub](https://github.com/aawhan0)
+## 👤 Author
+**Aawhan Vyas**  
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-aawhanvyas-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/aawhanvyas)  
+[![GitHub](https://img.shields.io/badge/GitHub-aawhan0-lightgrey?style=flat&logo=github)](https://github.com/aawhan0)
