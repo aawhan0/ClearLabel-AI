@@ -6,7 +6,13 @@
 [![Live Demo](https://img.shields.io/badge/Streamlit-Live_Demo-FF4B4B?style=flat&logo=streamlit)](https://clearlabel-ai.streamlit.app/)
 
 ---
+<p align="center">
+  <img src="assets/demo.gif" width="800"/>
+</p>
 
+> AI-powered pipeline for image quality validation and automated annotation using YOLOv8.
+
+---
 ## 🚀 Overview
 **ClearLabel AI** is a data-centric AI pipeline that automates image annotation while enforcing strict data quality standards through a dual-layer audit system.
 
